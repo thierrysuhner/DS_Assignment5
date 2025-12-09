@@ -11,14 +11,14 @@ _g_kvstorage: KVStorage | None = None
 
 
 def is_str(value):
-    b = True
-    #TODO: update b so that it is a boolean that indicates whether value is a string.
+    #updates b so that it is a boolean that indicates whether value is a string.
+    b = isinstance(value, str)
     return b
 
 
 def is_list_of_string(value):
-    b = True
-    # TODO: update b so that it is a boolean that indicates whether value is a list of strings.
+    #update b so that it is a boolean that indicates whether value is a list of strings.
+    b = isinstance(value, list) and all(isinstance(v, str) for v in value)
     return b
 
 
