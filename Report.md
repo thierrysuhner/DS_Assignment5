@@ -252,3 +252,7 @@ Ans: In the first network partition from task 3, we have a majority partition of
 2. Why is it that Raft cannot handle Byzantine failure? Explain in your own words.
 
 Ans: Raft is fundamentally designed only to handle crash failures where a server stops communicating / fails to follow protocol. It can't handle Byzantine failure (servers acting arbitrarily / maliciously), as the algorithm assumes all active non-faulty servers are honest and will correctly follow protocol rules. For example, raft's majority quorum for committing entries and trusting successful responses to AppendEntries RPCS, breaks down if a byzantine minority provides false confirmations / exploits Leader model. Furthermore, a Byzantine Leader could propose inconsistent logs, thereby violating safety properties.
+
+
+### Support Tools
+We have used ChatGPT to help with some problems regarding the execution of the scripts for the partitioning.
